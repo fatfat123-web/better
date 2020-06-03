@@ -1,7 +1,12 @@
 <template>
     <div class="wrapper" ref="wrapper">
         <ul class="content">
-            <li v-for="item in 5" :key="item" @scrollTo="scrollTo(item)" :style="{background: background[item-1]}">{{item}}</li>
+            <li style="background:burlywood ">1</li>
+            <li style="background:red ">2</li>
+            <li style="background:orangered ">3</li>
+            <li style="background:chartreuse ">4</li>
+            <li style="background:violet ">5</li>
+            <li style="background:cornflowerblue ">6</li>
 
         </ul>
     </div>
@@ -14,9 +19,9 @@
         data(){
             return{
                 scroll: true,
-                background: [
-                    'burlywood', 'red', 'orangered','violet','cornflowerblue',
-                ],
+                // background: [
+                //     'burlywood', 'red', 'orangered','violet','cornflowerblue',
+                // ],
                 options:{
                     scrollY: true,
                     snap: {
