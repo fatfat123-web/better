@@ -76,4 +76,26 @@
     .content li:nth-child(3) {
         background: #00f;
     }
+    .triangle {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #f60;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        margin-left: -10px;
+    }
+    .triangle:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #000;
+        position: absolute;
+        margin-left: -10px;
+        z-index: -1;
+        filter: blur(2px);
+    }
 </style>
