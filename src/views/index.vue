@@ -1,7 +1,10 @@
 <template>
     <div class="wrapper">
         <ul class="content">
-            <li>第一屏</li>
+            <li>
+            <div>第一屏</div>
+                <button @click="aa">123</button>
+            </li>
             <li>第二屏</li>
             <li>第三屏</li>
         </ul>
@@ -22,15 +25,29 @@
 
             }
         },
-        methods: {},
+        methods: {
+            aa(){
+                console.log(this.scroll)
+            }
+
+        },
         mounted() {
 
             new BScroll('.wrapper', {
-                       click: true,
+
                 snap: {  // 滑块切换的一些配置
 
-                    threshold: 0.3,  // 滑动切换到超过一半时切换到下一屏
-                    stepY: window.innerHeight  // 纵向切换距离为窗口高度
+                    speed: 800,  // 滑动切换的速度
+                    easing: {
+                        style: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+
+                    },
+                    click: true,  // 元素可触发点击事件
+                    stepY: window.innerHeight,// 纵向切换距离为窗口高度
+
+                    threshold: 0.4,  // 滑动切换到超过一半时切换到下一屏
+
+
                 }
             });
 
@@ -60,7 +77,7 @@
         align-items: center;
         height: 100vh;
         list-style: none;
-        font-size: 50px;
+        font-size: 20px;
         font-weight: bold;
         color: #fff;
     }
@@ -76,26 +93,5 @@
     .content li:nth-child(3) {
         background: #00f;
     }
-    .triangle {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid #f60;
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        margin-left: -10px;
-    }
-    .triangle:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid #000;
-        position: absolute;
-        margin-left: -10px;
-        z-index: -1;
-        filter: blur(2px);
-    }
+
 </style>
