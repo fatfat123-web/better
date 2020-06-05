@@ -20,9 +20,6 @@
             return {
                 scroll: true,
 
-
-
-
             }
         },
         methods: {
