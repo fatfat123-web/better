@@ -2,7 +2,7 @@
     <div class="wrapper">
         <ul class="content">
             <li>
-            <div>第一屏</div>
+            <div>第一屏啊</div>
                 <button @click="aa">123</button>
             </li>
             <li>第二屏</li>
