@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" ref="slide">
         <ul class="content">
             <li>
             <div>第一屏啊</div>
@@ -12,25 +12,37 @@
 </template>
 
 <script>
-    import BScroll from 'better-scroll'
+    import BScroll from '@better-scroll/core'
+    import Slide from '@better-scroll/slide'
+
+    BScroll.use(Slide)
 
     export default {
         name: "index",
         data() {
             return {
                 scroll: true,
-
             }
         },
         methods: {
             aa(){
                 console.log(this.scroll)
-            }
-
+            },
         },
         mounted() {
-
             new BScroll('.wrapper', {
+                scrollX: false,
+                scrollY: true,
+                slide: {
+                    threshold: 100
+                },
+                useTransition: true,
+                momentum: false,
+                bounce: false,
+                stopPropagation: true
+            })
+
+            /*new BScroll('.wrapper', {
 
                 snap: {  // 滑块切换的一些配置
 
@@ -46,8 +58,7 @@
 
 
                 }
-            });
-
+            });*/
         }
     }
 </script>
