@@ -14,7 +14,8 @@
                 class="doc"
                 v-for="(item, index) in 4"
                 :key="index"
-                :class="{'active': currentPageIndex === index}"></span>
+                :class="{'active': currentPageIndex === index}">
+        </span>
             </div>
         </div>
     </div>
@@ -59,7 +60,7 @@
             },
             _onScrollEnd() {
                 let pageIndex = this.slide.getCurrentPage().pageY
-                // this.currentPageIndex = pageIndex
+                this.currentPageIndex = pageIndex
             }
         }
     }
