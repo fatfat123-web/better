@@ -1,5 +1,5 @@
 <template>
-    <canvas ref="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;">1111</canvas>
+    <canvas ref="myCanvas" id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;">1111</canvas>
 </template>
 
 <script>
@@ -9,7 +9,8 @@
         data() {
             return {
                 myCanvas: null,
-                context: null,
+                canvas: null,
+                ctx: null,
                 x:null,
                 y:null,
                 radius:null,
@@ -17,9 +18,9 @@
         },
         mounted() {
             this.canvas = this.$refs.myCanvas
-            this.context = this.canvas.getContext('2d')
+            this.ctx = this.canvas.getContext('2d')
 
-            tool.captureMouse(canvas, mousedown, mousemove, mouseup); // 自己写对应的传参参数
+            tool.captureMouse(this.canvas, this.mousedown, this.mousemove, this.mouseup); // 自己写对应的传参参数
         },
         methods: {
 
@@ -46,13 +47,13 @@
                 this.y = event.point.y;
                 this.radius = 5;
                 /*清除整个canvas画布*/
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = 'red';
-                ctx.beginPath();
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.ctx.fillStyle = 'red';
+                this.ctx.beginPath();
                 /*绘制一个跟随鼠标的圆*/
-                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, true);
-                ctx.fill();
-                ctx.closePath();
+                this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, true);
+                this.ctx.fill();
+                this.ctx.closePath();
             },
 
             mouseup(event) {
