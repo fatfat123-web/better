@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="src/tool.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;" >1111</canvas>
+</body>
+<script type="text/javascript">
+    /*回调函数会传入一个event对象，event.point中包含了x和y属性，分别对应鼠标相对element的X坐标和Y坐标，函数内的this指向绑定元素element*/
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    function mousedown(event) {
+
+        console.log(event.point.x, event.point.y);
+
+        console.log(this);
+
+        onload = function () {
+            document.querySelector('.pointX').innerHTML = event.point.x;
+        }
+
+        onload = function () {
+            document.querySelector('.pointY').innerHTML = event.point.y;
+        }
+
+    }
+
+
+    function mousemove(event) {
+
+        console.log(event.point);
+
+        onload = function () {
+            document.querySelector('.pointX1').innerHTML = event.point.x;
+        }
+
+        onload = function () {
+            document.querySelector('.pointY1').innerHTML = event.point.y;
+        }
+
+        var x = event.point.x;
+
+        var y = event.point.y;
+
+        var radius = 5;
+
+        /*清除整个canvas画布*/
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'red';
+
+        ctx.beginPath();
+
+        /*绘制一个跟随鼠标的圆*/
+
+        ctx.arc(x, y, radius, 0, 2 * Math.PI, true);
+
+        ctx.fill();
+
+        ctx.closePath();
+
+    };
+
+
+    function mouseup(event) {
+
+        console.log(event.point);
+
+        onload = function () {
+            document.querySelector('.pointX2').innerHTML = event.point.x;
+        }
+
+        onload = function () {
+            document.querySelector('.pointY2').innerHTML = event.point.y;
+        }
+
+    };
+
+    /*传入canvas元素，后面是传入三个函数，分别对应mousedown、mousemove和mouseup事件的事件处理函数*/
+
+    tool.captureMouse(canvas, mousedown, mousemove, mouseup);
+
+
+</script>
+</html>
