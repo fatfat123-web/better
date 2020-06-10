@@ -1,5 +1,4 @@
 window.tool = {};
-
 window.tool.captureMouse = function (element, mousedown, mousemove, mouseup) {
 
 
@@ -61,3 +60,5 @@ window.tool.captureMouse = function (element, mousedown, mousemove, mouseup) {
 
 
 };
+
+export default tool

@@ -3,6 +3,7 @@
 </template>
 
 <script>
+    import tool from '../tool'
     export default {
         name: "tool",
         data() {
@@ -13,6 +14,12 @@
                 y:null,
                 radius:null,
             }
+        },
+        mounted() {
+            this.canvas = this.$refs.myCanvas
+            this.context = this.canvas.getContext('2d')
+
+            tool.captureMouse(canvas, mousedown, mousemove, mouseup); // 自己写对应的传参参数
         },
         methods: {
 
@@ -60,10 +67,7 @@
 
 
         },
-        mounted() {
-            this.canvas = this.$refs.myCanvas
-            this.context = this.canvas.getContext('2d')
-        },
+
 
     }
 </script>
