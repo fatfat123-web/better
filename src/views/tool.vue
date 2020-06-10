@@ -14,6 +14,7 @@
                 x:null,
                 y:null,
                 radius:null,
+                touchEvnet:null,
             }
         },
         mounted() {
@@ -23,6 +24,23 @@
             tool.captureMouse(this.canvas, this.mousedown, this.mousemove, this.mouseup); // 自己写对应的传参参数
         },
         methods: {
+
+            canvas.addEventListener('touchstart',function(event){
+
+                this.touchEvnet = event.changedTouches[0];
+
+                this.x = (touchEvent.pageX || touchEvent.clientX + document.body.scrollLeft+ document.documentElement.scrollLeft );
+
+                this.x -= canvas.offsetLeft;
+
+
+
+                this.y = (touchEvent.pageY || touchEvent.clientY + document.body.scrollTop + document.documentElement.scrollTop );
+
+                this.y -= canvas.offsetTop;
+
+            });
+
 
             mousedown(event) {
                 console.log(event.point.x, event.point.y);
