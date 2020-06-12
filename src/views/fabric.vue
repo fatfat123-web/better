@@ -46,7 +46,7 @@
                     angle: 0,//设置图形顺时针旋转角度
                 });
 
-                fabric.Image.fromURL('../assets/images/1.jpg', (oImg) =>  {
+                fabric.Image.fromURL(require('../assets/images/1.jpg'), (oImg) =>  {
                     oImg.scale(0.1);//图片缩小10倍
                     this.canvas.add(oImg);
                     console.log(oImg)
