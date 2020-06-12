@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import tool from './tool'
 
+
 Vue.config.productionTip = false
 
 new Vue({

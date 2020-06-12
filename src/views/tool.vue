@@ -1,5 +1,5 @@
 <template>
-    <canvas ref="myCanvas" id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;">1111</canvas>
+    <canvas ref="myCanvas" id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;"></canvas>
 </template>
 
 <script>
@@ -25,21 +25,7 @@
         },
         methods: {
 
-            canvas.addEventListener('touchstart',function(event){
 
-                this.touchEvnet = event.changedTouches[0];
-
-                this.x = (touchEvent.pageX || touchEvent.clientX + document.body.scrollLeft+ document.documentElement.scrollLeft );
-
-                this.x -= canvas.offsetLeft;
-
-
-
-                this.y = (touchEvent.pageY || touchEvent.clientY + document.body.scrollTop + document.documentElement.scrollTop );
-
-                this.y -= canvas.offsetTop;
-
-            });
 
 
             mousedown(event) {

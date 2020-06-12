@@ -23,6 +23,11 @@ const routes = [
     path: '/tool',
     component: () => import('../views/tool')
   },
+  {
+    path: '/fabric',
+    component: () => import('../views/fabric')
+  },
+
 
 ]
 

@@ -2,6 +2,24 @@ window.tool = {};
 window.tool.captureMouse = function (element, mousedown, mousemove, mouseup) {
 
 
+    // canvas.addEventListener('touchstart',function(event){
+    //
+    //     var touchEvnet = event.changedTouches[0];
+    //
+    //     var x = (touchEvent.pageX || touchEvent.clientX + document.body.scrollLeft+ document.documentElement.scrollLeft );
+    //
+    //     x -= canvas.offsetLeft;
+    //
+    //
+    //
+    //     var y = (touchEvent.pageY || touchEvent.clientY + document.body.scrollTop + document.documentElement.scrollTop );
+    //
+    //     y -= canvas.offsetTop;
+    //
+    // });
+    //
+
+
     /*传入Event对象*/
 
     function getPoint(event) {
