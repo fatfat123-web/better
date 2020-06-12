@@ -35,27 +35,30 @@
                 this.imgElement = document.getElementById('img');
                 console.log(this.imgElement)
 
-                this.imgInstance = new fabric.Image(this.imgElement, {  //设置图片的样式
-                    left: 50,
-                    top: 50,
-                    scaleX: 0.5,
-                    scaleY: 0.5,
-                    // width: this.imgElement.style.width,
-                    // height: '50%',
-                    // height: window.innerHeight,
-                    angle: 0,//设置图形顺时针旋转角度
-                });
+                // this.imgInstance = new fabric.Image(this.imgElement, {  //设置图片的样式
+                //     left: 50,
+                //     top: 50,
+                //     scaleX: 0.5,
+                //     scaleY: 0.5,
+                //     // width: this.imgElement.style.width,
+                //     // height: '50%',
+                //     // height: window.innerHeight,
+                //     angle: 0,//设置图形顺时针旋转角度
+                // });
+
+                // this.canvas.add(this.imgInstance);
+
 
                 fabric.Image.fromURL(require('../assets/images/1.jpg'), (oImg) =>  {
-                    oImg.scale(0.1);//图片缩小10倍
+                    oImg.scale(0.3);//图片缩小10倍
                     this.canvas.add(oImg);
-                    console.log(oImg)
+
                 });
 
 
                 console.log(new fabric.Image)
                 console.log(this.imgElement.style.height)
-                this.canvas.add(this.imgInstance);
+
 
             },
 
