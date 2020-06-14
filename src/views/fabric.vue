@@ -2,7 +2,7 @@
     <div>
 
         <canvas id="main"  ref="cvs" style="border:1px solid #c3c3c3;">
-            <img src="../assets/images/1.jpg" id="img" style="width:50%;height: auto;"> </canvas>
+             </canvas>
 
     </div>
 </template>
@@ -19,6 +19,8 @@
                 imgInstance: null,
                 imgElement: null,
                 canvas: null,
+                items:null,
+                test:null,
             }
         },
         methods: {
@@ -32,8 +34,8 @@
                 });
 
                 //获取id
-                this.imgElement = document.getElementById('img');
-                console.log(this.imgElement)
+                // this.imgElement = document.getElementById('img');
+                // console.log(this.imgElement)
 
                 // this.imgInstance = new fabric.Image(this.imgElement, {  //设置图片的样式
                 //     left: 50,
@@ -49,22 +51,35 @@
                 // this.canvas.add(this.imgInstance);
 
 
-                fabric.Image.fromURL(require('../assets/images/1.jpg'), (oImg) =>  {
-                    oImg.scale(0.3);//图片缩小10倍
-                    this.canvas.add(oImg);
+               fabric.Image.fromURL(require('../assets/images/1.jpg'), (oImg) =>  {
+                    oImg.set({ scaleX: 0.5, scaleY:0.3, originX:  'left', originY: 'top', selectable: true,id:'abc',});
+                    // oImg.scale(0.3).set('flipy', true);
+                    //  oImg.scaleX(10)
+                    //     top: 50,
+                    //     oImg.scaleX(window.innerWidth);
+                    //     scaleY: 0.5,
 
+                    this.canvas.add(oImg);
+                    console.log(oImg)
+
+                    console.log(oImg.id)
+                    console.log(document.getElementById('abc'))
                 });
 
 
-                console.log(new fabric.Image)
-                console.log(this.imgElement.style.height)
+                // this.items = this.canvas.getObjects();
+                // this.items[0].set("id","abc")
+
+                //
+                // console.log(new fabric.Image)
+                // console.log(this.imgElement.style.height)
 
 
             },
 
         },
         mounted() {
-            this.initialize()
+            this.initialize();
 
         }
     }
